@@ -1,20 +1,8 @@
-import { Navbar } from '../'
 import { Calendar, dateFnsLocalizer } from 'react-big-calendar'
-import { addHours, parse, startOfWeek, getDay, format } from 'date-fns'
-import enUS from 'date-fns/locale/en-US'
 import 'react-big-calendar/lib/css/react-big-calendar.css'
-
-const locales = {
-  'en-US': enUS,
-}
-
-const localizer = dateFnsLocalizer({
-    format,
-    parse,
-    startOfWeek,
-    getDay,
-    locales,
-})
+import { Navbar } from '../'
+import { addHours } from 'date-fns'
+import { localizer } from '../../helpers/'
 
 const events = [{
     title: 'Cumpleaños',
