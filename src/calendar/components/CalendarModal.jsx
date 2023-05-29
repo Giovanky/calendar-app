@@ -66,7 +66,7 @@ export const CalendarModal = () => {
     closeDateModal()
   }
 
-  const onSubmit = (e) => {
+  const onSubmit = async(e) => {
     e.preventDefault()
     setFormSubmitted(true)
     const difference = differenceInSeconds(formValues.end, formValues.start)
@@ -75,6 +75,8 @@ export const CalendarModal = () => {
         return 
     }
     if(formValues.title.length <= 0) return 
+    await startSavingEvent(formValues)
+    closeDateModal()
   }
 
   return (
