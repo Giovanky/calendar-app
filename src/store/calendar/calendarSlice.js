@@ -13,7 +13,7 @@ const tempEvent = {
 }
 
 export const calendarSlice = createSlice({
-    name:'template',
+    name:'calendar',
     initialState: {
         events: [tempEvent],
         activeEvent: null
@@ -22,7 +22,7 @@ export const calendarSlice = createSlice({
         onSetActiveEvent: (state, {payload}) => {
             state.activeEvent = payload
         },
-        onAddNewEvent: () => {
+        onAddNewEvent: (state, {payload}) => {
             state.events.push(payload)
             state.activeEvent = null
         }
